@@ -1,702 +1,665 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Dental Dra. Ana García Valoria | Odontopediatría Barcelona</title>
-    <meta name="description" content="Especialistas en odontopediatría en Barcelona. Cuidamos la salud bucodental de tu hijo desde bebé hasta la adolescencia. Clínica dental pediátrica en Sarrià-Sant Gervasi.">
-    <meta property="og:title" content="Clínica Dental Dra. Ana García Valoria — Odontopediatría Barcelona">
-    <meta property="og:description" content="Tu dentista de confianza para los más pequeños. Consulta en Balmes 195, Barcelona.">
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Dental Dra. Ana García Valoria · Odontopediatría Barcelona</title>
+  <meta name="description" content="Especialistas en odontopediatría en Barcelona. Cuidamos la salud bucodental de tu hijo desde bebé hasta la adolescencia. Balmes 195, Sarrià-Sant Gervasi." />
+  <meta property="og:title" content="Clínica Dental Dra. Ana García Valoria · Odontopediatría" />
+  <meta property="og:description" content="La dentista de confianza para los más pequeños. Balmes 195, Barcelona." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand:       #1B3A5C;
+      --brand-mid:   #254E7A;
+      --brand-light: #3A72A8;
+      --accent:      #C8883A;
+      --accent-soft: #F0D9B5;
+      --bg:          #FAFAF8;
+      --surface:     #F3EFE8;
+      --muted:       #9A9485;
+      --text:        #1C1C1A;
+      --font-head:   'Cormorant Garamond', Georgia, serif;
+      --font-body:   'DM Sans', sans-serif;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); font-weight: 300; }
 
-    <style>
-        :root {
-            --teal:       #2B7A6F;
-            --teal-dark:  #1F5C54;
-            --teal-light: #E4F4F2;
-            --coral:      #F07B54;
-            --coral-soft: #FEF0EB;
-            --bg:         #F9FAFB;
-            --white:      #FFFFFF;
-            --text:       #1E2D2A;
-            --muted:      #6B7B78;
-            --border:     rgba(43,122,111,.12);
-        }
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      min-height: 100svh;
+    }
+    .hero-left {
+      background: var(--brand);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 3rem 3rem 3.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      right: -1px; top: 0;
+      width: 1px; height: 100%;
+      background: rgba(200,136,58,0.25);
+    }
+    .hero-nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .hero-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .hero-nav a:hover { color: var(--accent-soft); }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Nunito', sans-serif;
-            font-weight: 400;
-        }
+    .hero-title-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 0 2rem;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .hero-name {
+      font-family: var(--font-head);
+      font-weight: 300;
+      font-size: clamp(2.6rem, 4vw, 4rem);
+      line-height: 1.05;
+      color: #FAFAF8;
+      letter-spacing: -0.01em;
+    }
+    .hero-name em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent-soft);
+      display: block;
+    }
+    .hero-tagline {
+      margin-top: 2.5rem;
+      font-family: var(--font-head);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      max-width: 280px;
+    }
+    .hero-cta-group { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 1.8rem;
+      transition: background 0.25s, transform 0.2s;
+      width: fit-content;
+    }
+    .btn-primary:hover { background: #b5762e; transform: translateY(-1px); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.4);
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: rgba(255,255,255,0.75); }
 
-        /* ── NAV ── */
-        #nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.25rem 0;
-            transition: background .35s, padding .35s, box-shadow .35s;
-        }
-        #nav.scrolled {
-            background: rgba(249,250,251,.97);
-            backdrop-filter: blur(10px);
-            padding: .75rem 0;
-            box-shadow: 0 2px 24px rgba(43,122,111,.08);
-        }
-        .nav-wrap {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-brand {
-            display: flex; flex-direction: column; text-decoration: none;
-        }
-        .nav-brand-name {
-            font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 500;
-            color: var(--teal); line-height: 1.2;
-        }
-        .nav-brand-sub {
-            font-size: .68rem; font-weight: 700; letter-spacing: .15em;
-            text-transform: uppercase; color: var(--coral); margin-top: 1px;
-        }
-        .nav-links { display: flex; align-items: center; gap: 2rem; }
-        .nav-links a {
-            font-size: .82rem; font-weight: 700; letter-spacing: .05em;
-            color: var(--text); text-decoration: none; transition: color .2s;
-        }
-        .nav-links a:hover { color: var(--teal); }
-        .nav-cta {
-            background: var(--teal); color: #fff !important;
-            padding: .6rem 1.4rem; border-radius: 50px;
-            transition: background .2s !important;
-        }
-        .nav-cta:hover { background: var(--teal-dark) !important; }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .hero-right::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(27,58,92,0.18) 0%, transparent 45%);
+    }
 
-        #menu-btn { display: none; background: none; border: none; cursor: pointer; color: var(--teal); }
-        #mobile-menu {
-            display: none; position: absolute; top: 100%; left: 0; right: 0;
-            background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.1);
-            padding: 1.5rem 2rem; flex-direction: column; gap: 1rem;
-        }
-        #mobile-menu.open { display: flex; }
-        #mobile-menu a {
-            font-size: .9rem; font-weight: 700; color: var(--text);
-            text-decoration: none; padding: .5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        #mobile-menu a:last-child { border-bottom: none; }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            #menu-btn { display: block; }
-        }
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: var(--accent-soft);
+      padding: 2.5rem 6rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      border-top: 1px solid rgba(200,136,58,0.25);
+    }
+    .intro-strip-item { display: flex; align-items: center; gap: 1rem; flex: 1; }
+    .intro-strip-icon {
+      width: 2.5rem; height: 2.5rem;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .intro-strip-text {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #5A3A18;
+    }
+    .intro-strip-divider { width: 1px; height: 3rem; background: rgba(200,136,58,0.35); }
 
-        /* ── HERO ── */
-        #hero {
-            min-height: 100vh;
-            display: grid; grid-template-columns: 1fr 1fr;
-            padding-top: 80px;
-        }
-        .hero-left {
-            background: var(--teal-light);
-            display: flex; flex-direction: column; justify-content: center;
-            padding: 5rem 4rem 5rem 5rem;
-        }
-        .hero-kicker {
-            display: inline-flex; align-items: center; gap: .5rem;
-            background: var(--coral-soft); color: var(--coral);
-            font-size: .75rem; font-weight: 800; letter-spacing: .12em;
-            text-transform: uppercase; padding: .45rem 1rem; border-radius: 50px;
-            margin-bottom: 2rem; width: fit-content;
-        }
-        .hero-kicker span { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
-        .hero-left h1 {
-            font-family: 'Lora', serif; font-size: clamp(2.6rem, 4.5vw, 4rem);
-            line-height: 1.15; color: var(--teal-dark); margin-bottom: 1.5rem;
-        }
-        .hero-left h1 em { font-style: italic; color: var(--coral); }
-        .hero-desc {
-            font-size: 1.05rem; color: var(--muted); line-height: 1.75;
-            margin-bottom: 2.5rem; max-width: 480px;
-        }
-        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: .5rem;
-            background: var(--teal); color: #fff;
-            padding: .9rem 2rem; border-radius: 50px;
-            font-size: .9rem; font-weight: 800; text-decoration: none;
-            transition: background .2s, transform .2s;
-        }
-        .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
-        .btn-outline {
-            display: inline-flex; align-items: center; gap: .5rem;
-            background: transparent; color: var(--teal);
-            padding: .9rem 2rem; border-radius: 50px;
-            border: 2px solid var(--teal);
-            font-size: .9rem; font-weight: 800; text-decoration: none;
-            transition: background .2s, color .2s, transform .2s;
-        }
-        .btn-outline:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
-        .hero-badges {
-            display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap;
-        }
-        .hero-badge {
-            display: flex; align-items: center; gap: .6rem;
-        }
-        .hero-badge-icon {
-            width: 2.2rem; height: 2.2rem; border-radius: 50%;
-            background: var(--white); display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 8px rgba(43,122,111,.15);
-            color: var(--teal); flex-shrink: 0;
-        }
-        .hero-badge-text { font-size: .8rem; font-weight: 700; color: var(--teal-dark); line-height: 1.3; }
-        .hero-badge-text span { font-weight: 400; color: var(--muted); display: block; }
+    /* ── SECTIONS ── */
+    section { padding: 7rem 6rem; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--brand);
+      letter-spacing: -0.01em;
+    }
+    .section-title em { font-style: italic; font-weight: 300; }
 
-        .hero-right {
-            position: relative; overflow: hidden;
-        }
-        .hero-right img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-        .hero-right-overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(43,122,111,.15) 0%, transparent 60%);
-        }
-        .hero-float-card {
-            position: absolute; bottom: 2.5rem; left: -2rem;
-            background: #fff; border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,.12);
-            display: flex; align-items: center; gap: 1rem; max-width: 260px;
-        }
-        .hero-float-icon {
-            width: 3rem; height: 3rem; border-radius: 12px;
-            background: var(--teal-light); display: flex; align-items: center; justify-content: center;
-            color: var(--teal); flex-shrink: 0;
-        }
-        .hero-float-text { font-size: .82rem; font-weight: 700; color: var(--text); line-height: 1.4; }
-        .hero-float-text span { font-weight: 400; color: var(--muted); display: block; font-size: .75rem; }
+    /* ── SERVICIOS ── */
+    #servicios { background: var(--bg); }
+    .servicios-grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid #E0DDD6;
+    }
+    .servicio-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid #E0DDD6;
+      border-bottom: 1px solid #E0DDD6;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .servicio-card:nth-child(3n) { border-right: none; }
+    .servicio-card:nth-child(4),
+    .servicio-card:nth-child(5),
+    .servicio-card:nth-child(6) { border-bottom: none; }
+    .servicio-card:hover { background: var(--surface); }
+    .servicio-num {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: rgba(200,136,58,0.2);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .servicio-name {
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 1.35rem;
+      color: var(--brand);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .servicio-line { width: 2rem; height: 1px; background: var(--accent); margin: 1.25rem 0; }
+    .servicio-desc {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
 
-        @media (max-width: 900px) {
-            #hero { grid-template-columns: 1fr; min-height: auto; }
-            .hero-left { padding: 4rem 2rem; }
-            .hero-right { height: 320px; }
-            .hero-float-card { display: none; }
-        }
+    /* ── CLÍNICA ── */
+    #clinica { background: var(--brand); padding: 0; }
+    .clinica-inner {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      min-height: 70vh;
+    }
+    .clinica-photos {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+    }
+    .clinica-photos img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      filter: brightness(0.9);
+      transition: filter 0.3s;
+    }
+    .clinica-photos img:hover { filter: brightness(1); }
+    .clinica-text {
+      padding: 5rem 5rem 5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .clinica-text .section-label { color: var(--accent); }
+    .clinica-text .section-title { color: #FAFAF8; }
+    .clinica-text .section-title em { color: var(--accent-soft); }
+    .clinica-body {
+      margin-top: 2rem;
+      font-family: var(--font-head);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      max-width: 360px;
+    }
+    .clinica-dra {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .clinica-dra strong {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .clinica-dra ul {
+      list-style: none;
+      padding: 0;
+    }
+    .clinica-dra ul li {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 2;
+      letter-spacing: 0.03em;
+    }
+    .clinica-dra ul li::before {
+      content: '—';
+      color: var(--accent);
+      margin-right: 0.6rem;
+    }
 
-        /* ── STATS BAR ── */
-        #stats {
-            background: var(--teal);
-            padding: 2.5rem 0;
-        }
-        .stats-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: flex; flex-wrap: wrap; justify-content: space-around; gap: 1.5rem;
-        }
-        .stat-item { text-align: center; }
-        .stat-num {
-            font-family: 'Lora', serif; font-size: 2.4rem; font-weight: 500;
-            color: #fff; line-height: 1;
-        }
-        .stat-label { font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.65); letter-spacing: .1em; text-transform: uppercase; margin-top: .3rem; }
+    /* ── MAP ── */
+    .map-wrap { filter: grayscale(25%) contrast(1.05); height: 340px; }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-        /* ── SERVICIOS ── */
-        #servicios { padding: 7rem 0; background: var(--white); }
-        .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .section-label {
-            font-size: .72rem; font-weight: 800; letter-spacing: .18em;
-            text-transform: uppercase; color: var(--coral); margin-bottom: .75rem;
-        }
-        .section-title {
-            font-family: 'Lora', serif; font-size: clamp(2rem, 3.5vw, 3rem);
-            color: var(--text); margin-bottom: 1rem; line-height: 1.2;
-        }
-        .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 4rem; }
+    /* ── HORARIO + CONTACTO ── */
+    #horario { background: var(--surface); }
+    .horario-grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .horario-table { width: 100%; }
+    .horario-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #E0DDD6;
+    }
+    .horario-row:first-child { border-top: 1px solid #E0DDD6; }
+    .horario-dia {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--brand);
+      font-weight: 400;
+    }
+    .horario-hora {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .horario-hora.cerrado { color: rgba(154,148,133,0.45); font-style: italic; }
 
-        .services-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--bg); border-radius: 20px; padding: 2.5rem 2rem;
-            border: 1px solid var(--border); transition: box-shadow .3s, transform .3s;
-            position: relative; overflow: hidden;
-        }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--teal), var(--coral));
-            opacity: 0; transition: opacity .3s;
-        }
-        .service-card:hover { box-shadow: 0 20px 50px rgba(43,122,111,.1); transform: translateY(-4px); }
-        .service-card:hover::before { opacity: 1; }
-        .service-icon {
-            width: 3.5rem; height: 3.5rem; border-radius: 14px;
-            background: var(--teal-light); display: flex; align-items: center; justify-content: center;
-            color: var(--teal); margin-bottom: 1.5rem;
-        }
-        .service-card h3 {
-            font-family: 'Lora', serif; font-size: 1.3rem; color: var(--text); margin-bottom: .75rem;
-        }
-        .service-card p { font-size: .95rem; color: var(--muted); line-height: 1.65; }
+    .contact-block {
+      background: var(--brand);
+      padding: 3rem;
+    }
+    .contact-block .section-label { color: var(--accent); }
+    .contact-title {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #FAFAF8;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+    .contact-title em { font-style: italic; color: var(--accent-soft); }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.07);
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-bottom: 0.75rem;
+    }
+    .contact-row:hover { background: rgba(255,255,255,0.12); }
+    .contact-row-icon {
+      width: 2rem; height: 2rem;
+      background: var(--brand-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-row-text {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.05em;
+    }
+    .contact-row-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
 
-        @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      padding: 3rem 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-name {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+    }
+    .footer-meta {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.08em;
+      text-align: right;
+      line-height: 1.8;
+    }
 
-        /* ── SOBRE ── */
-        #sobre { padding: 7rem 0; background: var(--bg); }
-        .sobre-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-        }
-        .sobre-img-wrap { position: relative; }
-        .sobre-img-bg {
-            position: absolute; inset: -1.5rem -1.5rem 1.5rem 1.5rem;
-            background: var(--teal-light); border-radius: 24px; z-index: 0;
-        }
-        .sobre-img-wrap img {
-            position: relative; z-index: 1;
-            width: 100%; border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(43,122,111,.15);
-            object-fit: cover; height: 560px;
-        }
-        .sobre-text .section-sub { margin-bottom: 1.5rem; }
-        .cred-list { list-style: none; padding: 0; margin: 1.5rem 0 2.5rem; display: flex; flex-direction: column; gap: .75rem; }
-        .cred-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .95rem; color: var(--text); }
-        .cred-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: .45rem; }
+    /* ── FLOATING PHONE ── */
+    .phone-float {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 3.25rem; height: 3.25rem;
+      background: var(--brand);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(27,58,92,0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .phone-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(27,58,92,0.55);
+    }
 
-        @media (max-width: 900px) {
-            .sobre-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .sobre-img-wrap img { height: 360px; }
-        }
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; grid-template-rows: auto 55vw; }
+      .hero-left { padding: 2.5rem 2rem; }
+      .hero-left::after { display: none; }
+      .hero-title-block { padding: 2.5rem 0 2rem; }
+      .hero-name { font-size: clamp(2.4rem, 8vw, 3.5rem); }
 
-        /* ── HORARIO ── */
-        #horario { padding: 7rem 0; background: var(--teal); }
-        .horario-inner {
-            max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-        }
-        .horario-text .section-label { color: rgba(255,255,255,.6); }
-        .horario-text .section-title { color: #fff; }
-        .horario-text .section-sub { color: rgba(255,255,255,.75); margin-bottom: 2rem; }
-        .horario-cta {
-            display: inline-flex; align-items: center; gap: .6rem;
-            background: var(--coral); color: #fff;
-            padding: .9rem 2rem; border-radius: 50px;
-            font-size: .9rem; font-weight: 800; text-decoration: none;
-            transition: background .2s, transform .2s;
-        }
-        .horario-cta:hover { background: #d96840; transform: translateY(-2px); }
+      .intro-strip { padding: 2rem; flex-direction: column; gap: 1.5rem; }
+      .intro-strip-divider { width: 3rem; height: 1px; }
 
-        .schedule-card {
-            background: rgba(255,255,255,.1); backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,.15); border-radius: 20px;
-            padding: 2rem; overflow: hidden;
-        }
-        .schedule-row {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.1);
-        }
-        .schedule-row:last-child { border-bottom: none; }
-        .schedule-day { font-size: .95rem; font-weight: 700; color: rgba(255,255,255,.85); }
-        .schedule-time {
-            font-size: .9rem; font-weight: 600;
-            color: #fff; background: rgba(255,255,255,.12);
-            padding: .3rem .85rem; border-radius: 50px;
-        }
-        .schedule-time.closed { color: rgba(255,255,255,.4); background: transparent; }
+      section { padding: 4rem 2rem; }
 
-        @media (max-width: 900px) {
-            .horario-inner { grid-template-columns: 1fr; gap: 3rem; }
-        }
+      .servicios-grid { grid-template-columns: 1fr 1fr; }
+      .servicio-card { border-right: none !important; border-bottom: 1px solid #E0DDD6 !important; }
+      .servicio-card:nth-child(odd) { border-right: 1px solid #E0DDD6 !important; }
 
-        /* ── CONTACTO ── */
-        #contacto { padding: 7rem 0; background: var(--white); }
-        .contacto-inner {
-            max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
-        }
-        .contacto-map-wrap {
-            border-radius: 20px; overflow: hidden;
-            box-shadow: 0 20px 60px rgba(43,122,111,.1);
-            height: 380px;
-        }
-        .contacto-map-wrap iframe { width: 100%; height: 100%; border: none; }
+      .clinica-inner { grid-template-columns: 1fr; grid-template-rows: 50vw auto; }
+      .clinica-photos { grid-template-rows: 1fr; }
+      .clinica-photos img:last-child { display: none; }
+      .clinica-text { padding: 3rem 2rem; }
 
-        .contacto-info .section-sub { margin-bottom: 2rem; }
-        .info-block {
-            display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem;
-        }
-        .info-item {
-            display: flex; align-items: flex-start; gap: 1rem;
-            background: var(--bg); border-radius: 14px; padding: 1rem 1.25rem;
-            border: 1px solid var(--border);
-        }
-        .info-icon {
-            width: 2.5rem; height: 2.5rem; border-radius: 10px;
-            background: var(--teal-light); display: flex; align-items: center; justify-content: center;
-            color: var(--teal); flex-shrink: 0;
-        }
-        .info-content { display: flex; flex-direction: column; }
-        .info-label { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .2rem; }
-        .info-value { font-size: .95rem; font-weight: 700; color: var(--text); }
-        .info-value a { color: var(--teal); text-decoration: none; }
-        .info-value a:hover { text-decoration: underline; }
+      .horario-grid { grid-template-columns: 1fr; gap: 3rem; }
 
-        @media (max-width: 900px) {
-            .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--text); color: rgba(255,255,255,.6);
-            padding: 3rem 0;
-        }
-        .foot-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;
-        }
-        .foot-brand {
-            font-family: 'Lora', serif; font-size: 1.15rem;
-            color: #fff;
-        }
-        .foot-brand span { display: block; font-family: 'Nunito', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--coral); margin-top: 2px; }
-        .foot-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-        .foot-links a { font-size: .85rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
-        .foot-links a:hover { color: #fff; }
-        .foot-copy { font-size: .82rem; width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem; margin-top: .5rem; }
-
-        /* ── REVEAL ── */
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-        .reveal.visible { opacity: 1; transform: none; }
-    </style>
+      footer { padding: 2.5rem 2rem; flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-meta { text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .servicios-grid { grid-template-columns: 1fr; }
+      .servicio-card { border-right: none !important; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-    <div class="nav-wrap">
-        <a href="#" class="nav-brand">
-            <span class="nav-brand-name">Dra. Ana García Valoria</span>
-            <span class="nav-brand-sub">Odontopediatría · Barcelona</span>
-        </a>
-        <div class="nav-links">
-            <a href="#servicios">Servicios</a>
-            <a href="#sobre">La Doctora</a>
-            <a href="#horario">Horario</a>
-            <a href="#contacto" class="nav-cta">Pedir cita</a>
-        </div>
-        <button id="menu-btn" aria-label="Menú">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-    </div>
-    <div id="mobile-menu">
-        <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
-        <a href="#sobre" onclick="closeMobileMenu()">La Doctora</a>
-        <a href="#horario" onclick="closeMobileMenu()">Horario</a>
-        <a href="#contacto" onclick="closeMobileMenu()">Pedir cita</a>
-    </div>
-</nav>
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <nav class="hero-nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#clinica">La clínica</a>
+      <a href="#horario">Horario</a>
+      <a href="#horario">Contacto</a>
+    </nav>
 
-<!-- HERO -->
-<section id="hero">
-    <div class="hero-left">
-        <div class="hero-kicker reveal">
-            <span></span> Especialistas en odontopediatría
-        </div>
-        <h1 class="reveal">La sonrisa de tu hijo, <em>en las mejores manos</em></h1>
-        <p class="hero-desc reveal">En la Clínica Dental de la Dra. Ana García Valoria cuidamos la salud bucodental de los más pequeños en un ambiente cálido, seguro y sin miedo al dentista.</p>
-        <div class="hero-actions reveal">
-            <a href="tel:+34932181982" class="btn-primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                932 181 982
-            </a>
-            <a href="#servicios" class="btn-outline">Ver servicios</a>
-        </div>
-        <div class="hero-badges reveal">
-            <div class="hero-badge">
-                <div class="hero-badge-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="hero-badge-text">Clínica acreditada<span>Especialistas pediátricos</span></div>
-            </div>
-            <div class="hero-badge">
-                <div class="hero-badge-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div class="hero-badge-text">Lunes a viernes<span>15:00 – 20:00 h</span></div>
-            </div>
-            <div class="hero-badge">
-                <div class="hero-badge-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div class="hero-badge-text">Sarrià-Sant Gervasi<span>Balmes 195, Barcelona</span></div>
-            </div>
-        </div>
+    <div class="hero-title-block">
+      <p class="hero-eyebrow">Odontopediatría · Sarrià-Sant Gervasi · Barcelona</p>
+      <h1 class="hero-name">
+        Dra. Ana<br>García Valoria
+        <em>Odontopediatría</em>
+      </h1>
+      <p class="hero-tagline">Cuidamos la sonrisa de tu hijo desde el primer diente.</p>
     </div>
-    <div class="hero-right">
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80&fit=crop" alt="Odontopediatría Barcelona">
-        <div class="hero-right-overlay"></div>
-        <div class="hero-float-card">
-            <div class="hero-float-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            </div>
-            <div class="hero-float-text">Entorno sin miedo<span>Adaptado para niños desde bebés hasta la adolescencia</span></div>
-        </div>
+
+    <div class="hero-cta-group">
+      <a href="tel:+34932181982" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        Pedir cita
+      </a>
+      <a href="tel:+34932181982" class="btn-ghost">↓ Llámanos al 932 181 982</a>
     </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e42?w=1100&q=80&fit=crop" alt="Clínica dental pediátrica Barcelona" />
+  </div>
 </section>
 
-<!-- STATS -->
-<div id="stats">
-    <div class="stats-inner">
-        <div class="stat-item">
-            <div class="stat-num">+15</div>
-            <div class="stat-label">Años de experiencia</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">0–18</div>
-            <div class="stat-label">Años de edad atendidos</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Especialización pediátrica</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">Balmes</div>
-            <div class="stat-label">195, Barcelona</div>
-        </div>
+<!-- ══════════════════════════════ INTRO STRIP ════════════════════════ -->
+<div class="intro-strip">
+  <div class="intro-strip-item">
+    <div class="intro-strip-icon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
     </div>
+    <p class="intro-strip-text">Carrer de Balmes, 195<br>Sarrià-Sant Gervasi, Barcelona</p>
+  </div>
+  <div class="intro-strip-divider"></div>
+  <div class="intro-strip-item">
+    <div class="intro-strip-icon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <p class="intro-strip-text">Lunes a viernes 15:00–20:00<br>Sábado y domingo cerrado</p>
+  </div>
+  <div class="intro-strip-divider"></div>
+  <div class="intro-strip-item">
+    <div class="intro-strip-icon">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    </div>
+    <p class="intro-strip-text">932 181 982<br>Consulta telefónica</p>
+  </div>
 </div>
 
-<!-- SERVICIOS -->
+<!-- ══════════════════════════════ SERVICIOS ══════════════════════════ -->
 <section id="servicios">
-    <div class="section-inner">
-        <p class="section-label reveal">Nuestros servicios</p>
-        <h2 class="section-title reveal">Todo lo que tu hijo necesita,<br>en un solo lugar</h2>
-        <p class="section-sub reveal">Ofrecemos una atención dental integral y especializada para niños, con técnicas adaptadas a cada edad y en un entorno pensado para ellos.</p>
-        <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <h3>Primera visita y revisión</h3>
-                <p>Revisión completa adaptada a la edad del niño, con valoración del desarrollo dental y consejos para los padres. Desde los primeros dientes de leche.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                </div>
-                <h3>Selladores y prevención</h3>
-                <p>Protección de los dientes permanentes con selladores de fisuras. La mejor inversión para evitar caries en los molares del niño.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12s1.5-2 4-2 4 2 4 2"/></svg>
-                </div>
-                <h3>Tratamiento de caries</h3>
-                <p>Obturaciones en dientes de leche y permanentes con técnicas mínimamente invasivas, priorizando siempre la comodidad del pequeño.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                </div>
-                <h3>Ortodoncia infantil</h3>
-                <p>Seguimiento y tratamiento temprano de maloclusiones para guiar el crecimiento correcto de la dentición y la mandíbula.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 12.5l8 8 8-8M4.5 6.5l8 8 8-8"/></svg>
-                </div>
-                <h3>Odontología sin miedo</h3>
-                <p>Técnicas de distracción, óxido nitroso y sedación consciente para niños con alta ansiedad dental o necesidades especiales.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="service-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                </div>
-                <h3>Urgencias dentales</h3>
-                <p>Atención prioritaria en casos de traumatismos, dolor agudo o diente roto. Tu hijo en buenas manos cuando más lo necesitas.</p>
-            </div>
-        </div>
+  <p class="section-label">Lo que ofrecemos</p>
+  <h2 class="section-title">Nuestros<br><em>servicios</em></h2>
+
+  <div class="servicios-grid">
+    <div class="servicio-card">
+      <div class="servicio-num">01</div>
+      <h3 class="servicio-name">Primera visita y revisión</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Exploración completa adaptada a la edad del niño, con valoración del desarrollo dental y guía para los padres. Desde los primeros dientes de leche.</p>
     </div>
+    <div class="servicio-card">
+      <div class="servicio-num">02</div>
+      <h3 class="servicio-name">Selladores y prevención</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Protección de los molares permanentes con selladores de fisuras. La mejor herramienta para prevenir caries en los dientes definitivos.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">03</div>
+      <h3 class="servicio-name">Tratamiento de caries</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Obturaciones en dientes de leche y permanentes con técnicas mínimamente invasivas, priorizando siempre la comodidad del pequeño.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">04</div>
+      <h3 class="servicio-name">Ortodoncia infantil</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Seguimiento y tratamiento temprano de maloclusiones para guiar el crecimiento correcto de la dentición y la mandíbula desde edades tempranas.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">05</div>
+      <h3 class="servicio-name">Odontología sin miedo</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Técnicas de distracción y sedación consciente para niños con ansiedad dental o necesidades especiales. Un entorno pensado para ellos.</p>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-num">06</div>
+      <h3 class="servicio-name">Urgencias dentales</h3>
+      <div class="servicio-line"></div>
+      <p class="servicio-desc">Atención prioritaria en casos de traumatismos, dolor agudo o diente roto. Tu hijo en buenas manos exactamente cuando más lo necesitas.</p>
+    </div>
+  </div>
 </section>
 
-<!-- SOBRE LA DRA -->
-<section id="sobre">
-    <div class="sobre-inner">
-        <div class="sobre-img-wrap reveal">
-            <div class="sobre-img-bg"></div>
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80&fit=crop&crop=face" alt="Dra. Ana García Valoria">
-        </div>
-        <div class="sobre-text reveal">
-            <p class="section-label">La especialista</p>
-            <h2 class="section-title">Dra. Ana García Valoria</h2>
-            <p class="section-sub">Odontopediatra con más de 15 años de experiencia dedicados exclusivamente a la salud dental de los niños. Su filosofía: que cada visita al dentista sea una experiencia positiva.</p>
-            <p style="font-size:.95rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;">Diplomada en Odontología y especializada en Odontopediatría, la Dra. García Valoria combina la experiencia clínica con una atención cercana y personalizada que los niños y sus familias agradecen desde la primera visita.</p>
-            <ul class="cred-list">
-                <li><span class="cred-dot"></span>Especialista en Odontopediatría por la Universitat de Barcelona</li>
-                <li><span class="cred-dot"></span>Miembro de la Sociedad Española de Odontopediatría (SEOP)</li>
-                <li><span class="cred-dot"></span>Formación avanzada en odontología sin miedo y sedación consciente</li>
-                <li><span class="cred-dot"></span>Atención a pacientes con necesidades especiales</li>
-                <li><span class="cred-dot"></span>Más de 15 años de práctica exclusiva en odontopediatría</li>
-            </ul>
-            <a href="tel:+34932181982" class="btn-primary" style="width:fit-content">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                Reservar cita
-            </a>
-        </div>
+<!-- ══════════════════════════════ CLÍNICA ════════════════════════════ -->
+<div id="clinica">
+  <div class="clinica-inner">
+    <div class="clinica-photos">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80&fit=crop" alt="Sala de tratamientos" />
+      <img src="https://images.unsplash.com/photo-1629909615957-be38d48fbbe4?w=800&q=80&fit=crop" alt="Consulta pediátrica" />
     </div>
-</section>
+    <div class="clinica-text">
+      <p class="section-label">La especialista</p>
+      <h2 class="section-title">Una clínica<br><em>pensada para ellos</em></h2>
+      <p class="clinica-body">Un espacio cálido, seguro y diseñado para que los niños vivan la visita al dentista como una experiencia positiva desde el primer momento.</p>
+      <div class="clinica-dra">
+        <strong>Dra. Ana García Valoria · Credenciales</strong>
+        <ul>
+          <li>Especialista en Odontopediatría — Universitat de Barcelona</li>
+          <li>Miembro de la Sociedad Española de Odontopediatría (SEOP)</li>
+          <li>Formación avanzada en sedación consciente infantil</li>
+          <li>Más de 15 años de práctica exclusiva en odontopediatría</li>
+          <li>Atención a pacientes con necesidades especiales</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- HORARIO -->
+<!-- ══════════════════════════════ MAP ════════════════════════════════ -->
+<div class="map-wrap">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.8!2d2.1538!3d41.3978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCarrer+de+Balmes+195+Barcelona!5e0!3m2!1ses!2ses!4v1"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Ubicación Clínica Dental Dra. Ana García Valoria">
+  </iframe>
+</div>
+
+<!-- ══════════════════════════════ HORARIO + CONTACTO ════════════════ -->
 <section id="horario">
-    <div class="horario-inner">
-        <div class="horario-text reveal">
-            <p class="section-label">Cuándo visitarnos</p>
-            <h2 class="section-title">Horario de consulta</h2>
-            <p class="section-sub">Abrimos de lunes a viernes en horario de tarde para que puedas traer a tu hijo después del colegio sin complicaciones.</p>
-            <a href="tel:+34932181982" class="horario-cta">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                Llamar ahora
-            </a>
-        </div>
-        <div class="schedule-card reveal">
-            <div class="schedule-row">
-                <span class="schedule-day">Lunes</span>
-                <span class="schedule-time">15:00 – 20:00</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Martes</span>
-                <span class="schedule-time">15:00 – 20:00</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Miércoles</span>
-                <span class="schedule-time">15:00 – 20:00</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Jueves</span>
-                <span class="schedule-time">15:00 – 20:00</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Viernes</span>
-                <span class="schedule-time">15:00 – 20:00</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Sábado</span>
-                <span class="schedule-time closed">Cerrado</span>
-            </div>
-            <div class="schedule-row">
-                <span class="schedule-day">Domingo</span>
-                <span class="schedule-time closed">Cerrado</span>
-            </div>
-        </div>
+  <p class="section-label">Cuándo visitarnos</p>
+  <h2 class="section-title">Horario y<br><em>contacto</em></h2>
+
+  <div class="horario-grid">
+    <div>
+      <div class="horario-table">
+        <div class="horario-row"><span class="horario-dia">Lunes</span><span class="horario-hora">15:00 – 20:00</span></div>
+        <div class="horario-row"><span class="horario-dia">Martes</span><span class="horario-hora">15:00 – 20:00</span></div>
+        <div class="horario-row"><span class="horario-dia">Miércoles</span><span class="horario-hora">15:00 – 20:00</span></div>
+        <div class="horario-row"><span class="horario-dia">Jueves</span><span class="horario-hora">15:00 – 20:00</span></div>
+        <div class="horario-row"><span class="horario-dia">Viernes</span><span class="horario-hora">15:00 – 20:00</span></div>
+        <div class="horario-row"><span class="horario-dia">Sábado</span><span class="horario-hora cerrado">Cerrado</span></div>
+        <div class="horario-row"><span class="horario-dia">Domingo</span><span class="horario-hora cerrado">Cerrado</span></div>
+      </div>
     </div>
+
+    <div id="contacto">
+      <div class="contact-block">
+        <p class="section-label" style="margin-bottom:1rem">Reservar cita</p>
+        <p class="contact-title">Llámenos y<br><em>le atendemos</em></p>
+        <a href="tel:+34932181982" class="contact-row">
+          <div class="contact-row-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div class="contact-row-text">
+            <span class="contact-row-label">Teléfono</span>
+            932 181 982
+          </div>
+        </a>
+        <a href="tel:+34932181982" class="contact-row" style="background:rgba(255,255,255,0.04)">
+          <div class="contact-row-icon" style="background:rgba(200,136,58,0.6)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-row-text">
+            <span class="contact-row-label">Dirección</span>
+            Carrer de Balmes, 195 · Barcelona
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto">
-    <div class="section-inner">
-        <div style="max-width:560px;margin-bottom:4rem">
-            <p class="section-label reveal">Dónde estamos</p>
-            <h2 class="section-title reveal">Visítanos en Barcelona</h2>
-        </div>
-    </div>
-    <div class="contacto-inner">
-        <div class="contacto-map-wrap reveal">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.1!2d2.1538!3d41.3978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f6f87f0001%3A0x0!2sCarrer+de+Balmes+195+Barcelona!5e0!3m2!1ses!2ses!4v1"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-        <div class="contacto-info reveal">
-            <p class="section-label">Información de contacto</p>
-            <h2 class="section-title" style="font-size:2rem;margin-bottom:1rem">¿Cómo llegar?</h2>
-            <p class="section-sub">Estamos en pleno corazón de Sarrià-Sant Gervasi, fácilmente accesibles en metro, bus o a pie.</p>
-            <div class="info-block">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div class="info-content">
-                        <span class="info-label">Dirección</span>
-                        <span class="info-value">Carrer de Balmes, 195<br>Sarrià-Sant Gervasi, 08006 Barcelona</span>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-                    </div>
-                    <div class="info-content">
-                        <span class="info-label">Teléfono</span>
-                        <span class="info-value"><a href="tel:+34932181982">932 181 982</a></span>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div class="info-content">
-                        <span class="info-label">Horario</span>
-                        <span class="info-value">Lunes a viernes: 15:00 – 20:00</span>
-                    </div>
-                </div>
-            </div>
-            <a href="tel:+34932181982" class="btn-primary" style="width:fit-content">
-                Pedir cita por teléfono
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
+<!-- ══════════════════════════════ FOOTER ════════════════════════════ -->
 <footer>
-    <div class="foot-inner">
-        <div class="foot-brand">
-            Dra. Ana García Valoria
-            <span>Odontopediatría · Barcelona</span>
-        </div>
-        <div class="foot-links">
-            <a href="#servicios">Servicios</a>
-            <a href="#sobre">La Doctora</a>
-            <a href="#horario">Horario</a>
-            <a href="#contacto">Contacto</a>
-        </div>
-        <div class="foot-copy">
-            &copy; <span id="year"></span> Clínica Dental Dra. Ana García Valoria · Carrer de Balmes 195, Barcelona · <a href="tel:+34932181982" style="color:rgba(255,255,255,.4)">932 181 982</a>
-        </div>
-    </div>
+  <p class="footer-name">Dra. Ana García Valoria · Odontopediatría</p>
+  <p class="footer-meta">
+    Carrer de Balmes, 195 · 08006 Barcelona<br>
+    © <span id="year"></span> Clínica Dental Dra. Ana García Valoria
+  </p>
 </footer>
 
-<!-- FLOATING CALL BUTTON -->
-<a href="tel:+34932181982" style="
-    position:fixed; bottom:1.5rem; right:1.5rem; z-index:99;
-    width:3.5rem; height:3.5rem; border-radius:50%;
-    background:var(--teal); color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 6px 24px rgba(43,122,111,.4);
-    text-decoration:none; transition:transform .2s;
-" aria-label="Llamar" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+<!-- Floating phone -->
+<a href="tel:+34932181982" class="phone-float" aria-label="Llamar">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.17 1 2 2 0 012.19 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.62-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
 </a>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
-
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-function closeMobileMenu() { mobileMenu.classList.remove('open'); }
-
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-reveals.forEach(el => observer.observe(el));
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
